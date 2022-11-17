@@ -83,13 +83,20 @@
                 const depositAmount = document.getElementById("depositAmount").value;
                 const depositNumber = parseFloat(depositAmount);
 
+                if (depositNumber < 0) {
+                    alert("Please enter a positive number");
+                }
+                else {
+                    //deposit update
+                    updateSpanText("currentDeposit", depositNumber);
 
-                //deposit update
-                updateSpanText("currentDeposit", depositNumber);
+                    //balance update
+                    updateSpanText("currentBalance", depositNumber);
+                    document.getElementById("depositAmount").value = "";
+                }
 
-                //balance update
-                updateSpanText("currentBalance", depositNumber);
-                document.getElementById("depositAmount").value = "";
+
+
             })
 
 
